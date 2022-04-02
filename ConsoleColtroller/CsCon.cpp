@@ -22,9 +22,14 @@ void CsCon::clearColsole() {
   system("cls");
 }
 
-void CsCon::setConcoleBackGroundColor(EnumColor color) {
+void CsCon::setConcoleColor(EnumColor background_color, EnumColor text_color) {
   std::string str = "color ";
-  str += std::to_string(static_cast<int>(color));
+  int i_bk = static_cast<int>(background_color);
+  int i_tx = static_cast<int>(text_color);
+  char c_bk = i_bk <= 9 ? static_cast<char>(i_bk + '0') : static_cast<char>(i_bk - 10 + 'A');
+  char c_tx = i_tx <= 9 ? static_cast<char>(i_tx + '0') : static_cast<char>(i_tx - 10 + 'A');
+  str += c_bk;
+  str += c_tx;
   system(str.c_str());
 }
 

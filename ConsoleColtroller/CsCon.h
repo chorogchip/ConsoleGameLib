@@ -29,6 +29,7 @@ public:
   /// \brief 콘솔창의 크기를 설정한다.
   /// 크기는 콘솔창에 들어갈 수 있는 문자의 수로 정한다.
   /// 문자 하나의 크기를 보면 가로보다 세로가 더 김에 주의하자.
+  /// 이 함수를 호출하면 화면의 내용을 지워버린다.
   ///
   /// \param window_x 콘솔 창에 가로로 들어가는 문자의 개수이다.
   /// \param window_y 콘솔 창에 세로로 들어가는 문자의 개수이다.
@@ -41,12 +42,15 @@ public:
   static void clearColsole();
 
   ////////////////////////////////////////////////////////////
-  /// \brief 콘솔창의 배경 색을 설정한다.
-  /// 사용방법 : CsCon::setConcoleBackGroundColor(EnumColor::RED);
+  /// \brief 콘솔창의 배경과 글지 색을 설정한다.
+  /// 사용방법 : CsCon::setConcoleColor(EnumColor::BLACK, EnumColor::RED);
+  /// 
+  /// \param background_color 배경의 색깔이다.
+  /// \param text_color 텍스트의 색깔이다.
   ////////////////////////////////////////////////////////////
-  static void setConcoleBackGroundColor(EnumColor color);
+  static void setConcoleColor(EnumColor background_color, EnumColor text_color);
   ////////////////////////////////////////////////////////////
-  /// \brief 주어신 시간 동안 대기한다.
+  /// \brief 주어진 시간 동안 대기한다.
   /// 
   /// \param miliseconds 대기하는 시간이다.
   /// wait(1)은 1000분의 1초 대기이다.
